@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="ie8">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7"/>
+
+    <title>Boodskap IoT Platform - Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+          name="viewport"/>
+
+    <meta name="description"
+          content="Boodskap is a disruptive (IoT) Platform helps to quickly connect any hardware devices and to rapidly build connected applications in a cost efficient manner"/>
+    <meta name="keywords"
+          content="boodskap.io, boodskap inc, boodskap, boodskap platform,iot starter kit, iot, internet of things, iot devices,what is internet of things,iot platform,iot applications,iot sensors,iot internet of things,industrial iot,industrial internet of things, m2m">
+
+    <meta content="Boodskap Inc.," name="author"/>
+
+
+    <link href="images/favicon.ico" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet"/>
+
+    <link href="css/login/jquery-ui.min.css" rel="stylesheet"/>
+    <link href="css/login/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/login/animate.min.css" rel="stylesheet"/>
+    <link href="css/login/style.min.css" rel="stylesheet"/>
+    <link href="css/login/style-responsive.min.css" rel="stylesheet"/>
+    <link href="css/login/default.css" rel="stylesheet" id="theme"/>
+    <script src="libraries/pace.min.js"></script>
+
+    <base href="<%=basepath %>/" />
+
+</head>
+<body class="pace-top bg-white">
+<input type="hidden" id="WEB_BASE_PATH" value="<%=basepath %>" />
+
+<div id="page-loader" class="fade show"><span class="spinner"></span></div>
+<div id="page-container" class="fade">
+    <div class="login login-with-news-feed">
+        <div class="news-feed" style="border-right:1px solid #eee;background-color: #fac300;">
+            <div class="col-lg-12 loginCustom" style="display: none">
+
+
+            </div>
+            <div class="news-caption leftBottomBg">
+                <h4 class="caption-title titleName" style="font-weight: bold">Boodskap Highly Scalable IoT Platform</h4>
+                <p class="sloganText">
+                    The Launch Pad for your IoT needs
+                </p>
+            </div>
+            <!-- <div class="col-lg-12 m-t-20">
+
+             </div>-->
+        </div>
+        <div class="right-content">
+            <div class="login-header" style="text-align: center">
+                <div class="brand">
+                    <img class="loginLogo" style="width: 175px" src="images/boodskap/bdskap-logo-2.png"/>
+                </div>
+            </div>
+            <div class="login-content">
+                <form action="javascript:void(0)" class="margin-bottom-0" onsubmit="login()">
+                    <div class="form-group m-b-15">
+                        <label>Username</label>
+                        <input type="text" class="form-control form-control-lg" id="username" placeholder="" required/>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <label>Password</label>
+                        <input type="password" class="form-control form-control-lg" id="password" placeholder=""
+                               required/>
+                    </div>
+                    <div class="login-buttons mt-4">
+                        <button type="submit" class="btn btn-warning btn-block btn-lg" id="submitButton">Sign me in
+                        </button>
+                    </div>
+
+                    <p class="text-center text-grey-darker mt-3">
+                        &copy; <span class="currentYear"></span> All rights reserved.
+                        <a href="https://boodskap.io" target="_blank" class="text-warning textColor mt-2"><img src="images/boodskap/powered-by-boodskap.png" height="30px"/></a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="libraries/login/jquery-3.5.1.min.js"></script>
+<script src="libraries/login/jquery-ui.min.js"></script>
+<script src="libraries/login/bootstrap.bundle.min.js"></script>
+<script src="libraries/login/html5shiv.js"></script>
+<script src="libraries/login/respond.min.js"></script>
+<script src="libraries/login/excanvas.min.js"></script>
+<script src="libraries/login/jquery.slimscroll.min.js"></script>
+<script src="libraries/login/js.cookie.js"></script>
+<script src="libraries/login/default.min.js"></script>
+<script src="libraries/login/apps.min.js"></script>
+<script src="libraries/moment.js"></script>
+<script src="libraries/sweetalert.min.js"></script>
+
+
+
+<script src="js/platform-config.js"></script>
+<script src="js/variables.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/api-adapter.js"></script>
+
+
+<script src="js/login.js"></script>
+
+<script>
+    $(document).ready(function () {
+        App.init();
+    });
+</script>
+</body>
+</html>
+
