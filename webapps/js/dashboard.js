@@ -11,6 +11,11 @@ function loadUserDashboard(obj){
     $("#dashboardTab").html('')
     $("#dashboardTabContent").html('')
 
+    var errorTxt = '<div  class="text-center mt-4 ">' +
+        '<h1 style="font-size: 5rem;color: #ff9800;opacity: 0.5;"><i class="fa fa-exclamation-triangle"></i> </h1>' +
+        '<h6><a class="text-info" style="font-size: 100% !important;" href="/platform" target="_blank">Click Here</a> ' +
+        'to configure your dashboard</h6></div>'
+
     getUserProperty('user.dashboard.list',USER_OBJ.email,function (status,data){
 
         if(status){
@@ -47,11 +52,15 @@ function loadUserDashboard(obj){
                 loadContent(dat[0].tokenId,dat[0].name,dat[0].imgpath)
 
             }else{
-                errorMsg('Oops! Dashboard not yet configured!')
+                // errorMsg('Oops! Dashboard not yet configured!');
+
+                $("#dashboardTabContent").html(errorTxt)
             }
 
         }else{
-            errorMsg('Oops! Dashboard not yet configured!')
+            // errorMsg('Oops! Dashboard not yet configured!')
+
+            $("#dashboardTabContent").html(errorTxt)
         }
 
     })

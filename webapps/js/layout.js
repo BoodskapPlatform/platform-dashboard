@@ -72,7 +72,12 @@ function loadLogoPicture() {
 
 
 function renderUserDetails() {
-    $(".user_profile_name").html(USER_OBJ.firstName + ' ' + (USER_OBJ.lastName ? USER_OBJ.lastName : ''))
+    if(USER_OBJ.firstName){
+        $(".user_profile_name").html(USER_OBJ.firstName + ' ' + (USER_OBJ.lastName ? USER_OBJ.lastName : ''))
+    }else{
+        $(".user_profile_name").html('Administrator')
+    }
+
 }
 
 
