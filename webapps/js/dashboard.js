@@ -79,7 +79,7 @@ function loadContent(id,nam,imgpath){
     //'<img src="'+(imgpath ? imgpath : 'images/dashboard.png')+'" style="width:24px;margin-right:5px;" /> '+
     $(".pageTitle").html('<i class="fa fa-cube" style="color: #666"></i> '+ nam);
 
-    $("#dashboardTabContent").html('<iframe onload="autoResize(this)" id="parentIframe" src="'+CONFIG.web + '/public/dashboard/' + DOMAIN_KEY + '/' + id+'?p=1" style="width: 100%;height:'+$(window).height()+'px;border:0px;overflow: no-display"></iframe>');
+    $("#dashboardTabContent").html('<iframe onload="autoResize(this)" id="parentIframe" src="'+CONFIG.web + '/public/dashboard/' + DOMAIN_KEY + '/' + id+'?p=1" style="width: 100%;height:'+$(window).height()*10+'px;border:0px;overflow: no-display"></iframe>');
 
 
 }
@@ -87,5 +87,5 @@ function loadContent(id,nam,imgpath){
 function autoResize(iFrame) {
     // iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
     // alert(iFrame.contentWindow.document.body.scrollHeight)
-    iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+    // iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
 }
