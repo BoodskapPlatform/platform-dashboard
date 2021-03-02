@@ -1,1 +1,1 @@
-var CONFIG={"web":"http://boodskap.xyz/platform","api":"http://boodskap.xyz/api","mqtt":{"hostName":"boodskap.xyz","portNo":80,"ssl":false},"googleAnalytics":"","googleMapApiKey":""}
+var CONFIG={"googleAnalytics":""}

@@ -7,9 +7,6 @@ $(document).ready(function () {
         loadGoogleAnalytics(GOOGLE_ANALYTICS_COCDE)
     }
 
-    if(GOOGLE_MAP_API_KEY){
-        loadGoogleMaps(GOOGLE_MAP_API_KEY)
-    }
 });
 
 

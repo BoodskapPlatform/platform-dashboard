@@ -15,17 +15,8 @@ try{
 }
 
 var serverPort = 'server.port';
-var serverBasePath = 'server.basepath';
-var serverFullPath = 'server.fullpath';
-var mqttHost = 'mqtt.host';
-var mqttPort = 'mqtt.port';
-var mqttSSL = 'mqtt.ssl';
-var webPath = 'boodskap.web';
-var apiPath = 'boodskap.api';
 var domainKey = 'boodskap.domainkey';
-
 var googleAnalytics = 'google.analytics.id';
-var googleMapKey = 'google.map.key';
 
 //Get the property value
 getProperty = (pty) => {return prop.get(pty);}
@@ -39,7 +30,7 @@ async.series({
          1] Configuring Server Properties
          ****************************/
 
-        let txt = 'var config = {port:'+getProperty(serverPort)+',domainKey:"'+(getProperty(domainKey) ? getProperty(domainKey) : "")+'",basepath:"'+(getProperty(serverBasePath) ? getProperty(serverBasePath) : "")+'",fullpath:"'+getProperty(serverFullPath)+'"};\nmodule.exports=config;';
+        let txt = 'var config = {port:'+getProperty(serverPort)+',domainKey:"'+(getProperty(domainKey) ? getProperty(domainKey) : "")+'"};\nmodule.exports=config;';
         fs.writeFile('config.js', txt, (err) => {
             if (err){
                 console.error('Error in configuring server properties')
@@ -57,9 +48,7 @@ async.series({
          2] Configuring Web Properties
          ****************************/
 
-        let txt = 'var CONFIG={"web":"'+getProperty(webPath)+'","api":"'+getProperty(apiPath)+'","mqtt":{"hostName":"'+getProperty(mqttHost)+'","portNo":'+getProperty(mqttPort)+',"ssl":'+getProperty(mqttSSL)+'},' +
-            '"googleAnalytics":"'+(getProperty(googleAnalytics) ? getProperty(googleAnalytics) : '')+'",' +
-            '"googleMapApiKey":"'+(getProperty(googleMapKey) ? getProperty(googleMapKey) : '')+'"}';
+        let txt = 'var CONFIG={"googleAnalytics":"'+(getProperty(googleAnalytics) ? getProperty(googleAnalytics) : '')+'"}';
 
          fs.writeFile('./webapps/js/platform-config.js', txt, (err) => {
              if (err){

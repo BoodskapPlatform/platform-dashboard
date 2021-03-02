@@ -20,7 +20,7 @@ function login(){
 
         if(status){
             Cookies.set('session_obj', data);
-            document.location = WEB_BASE_PATH+'/dashboard';
+            document.location = WEB_BASE_PATH;
 
         }else{
             swal({

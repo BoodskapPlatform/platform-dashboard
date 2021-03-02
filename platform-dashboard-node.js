@@ -17,6 +17,8 @@ var router = express.Router()
  ****************************/
 var conf = require("./config");
 
+conf['basepath'] = '';
+
 
 app.use(bodyParser.urlencoded({
     extended: true

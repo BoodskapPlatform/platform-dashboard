@@ -26,30 +26,18 @@ In `dashboard.properties` file,
 #default property
 
 [server]
+[server]
 port=10000
-basepath=
-fullpath=http://boodskap.xyz
 
-[boodskap]
-web=http://boodskap.xyz/platform
-api=http://boodskap.xyz/api
+[login]
 domainkey=
-
-[mqtt]
-host=boodskap.xyz
-port=80
-ssl=false
 
 [google]
 analytics.id=
-map.key=
 
 
 ```
 To change the UI port, update the server property
-
-#### Note
-If you are downloading the platform (or) running in our own dedicated server.You may have to change the `boodskap` and `mqtt` property
 
 ### Build Properties
 Once all the changes done in property file. Execute a command
