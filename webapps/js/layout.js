@@ -32,10 +32,12 @@ function geThemeProperty() {
 function loadLogoPicture() {
 
     if (!Cookies.get('domain_logo')) {
-        getGlobalProperty(ADMIN_DOMAIN_BRANDING_PROPERTY, USER_OBJ.domainKey, function (status, data) {
+        // getGlobalProperty(ADMIN_DOMAIN_BRANDING_PROPERTY, USER_OBJ.domainKey, function (status, data) {
+        getDomainProperty(DOMAIN_BRANDING_PROPERTY, function (status, data) {
             if (status) {
-                var src = data.data;
-                $(".domain_logo").attr('src', API_BASE_PATH + '/files/public/download/' + src);
+                var obj = JSON.parse(data.value);
+                var src = obj.webLogo;
+                $(".domain_logo").attr('src', API_BASE_PATH + '/files/download/'+API_TOKEN+'/' + src);
                 Cookies.set('domain_logo', src);
 
                 // $(document).prop('title', resultData.titleName);
@@ -43,7 +45,7 @@ function loadLogoPicture() {
                 var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
                 link.type = 'image/x-icon';
                 link.rel = 'shortcut icon';
-                link.href = API_BASE_PATH + '/files/public/download/' + src;
+                link.href = API_BASE_PATH + '/files/download/'+API_TOKEN+'/' + src;
                 document.getElementsByTagName('head')[0].appendChild(link);
 
             } else {
@@ -58,12 +60,12 @@ function loadLogoPicture() {
 
         })
     } else {
-        $(".domain_logo").attr('src', API_BASE_PATH + '/files/public/download/'+ Cookies.get('domain_logo'));
+        $(".domain_logo").attr('src', API_BASE_PATH + '/files/download/'+API_TOKEN+'/'+ Cookies.get('domain_logo'));
 
         var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
         link.type = 'image/x-icon';
         link.rel = 'shortcut icon';
-        link.href = API_BASE_PATH + '/files/public/download/' + Cookies.get('domain_logo');
+        link.href = API_BASE_PATH + '/files/download/'+API_TOKEN+'/' + Cookies.get('domain_logo');
         document.getElementsByTagName('head')[0].appendChild(link);
     }
 
