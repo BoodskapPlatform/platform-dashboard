@@ -26,10 +26,9 @@ In `dashboard.properties` file,
 #default property
 
 [server]
-[server]
 port=10000
 
-[login]
+[boodskap]
 domainkey=
 
 [google]
